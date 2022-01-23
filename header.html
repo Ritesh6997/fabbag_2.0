@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fab Bag header</title>
+    <script src="https://kit.fontawesome.com/11ec43b564.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }        
+        #header {
+            margin-bottom: 2%;
+            padding: 0% 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;     
+            height: 70px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: fixed;
+            left: 0;
+            right:0;
+            top:0; 
+            z-index: 999;   
+        }      
+        #subs {
+            display: inline-block;
+        }        
+        #subs a {
+            font-size: 1.6em;
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+        }      
+        #header a:hover {
+            color: #e4b961;
+        }        
+        #logo {
+            text-align: center;
+        }        
+        #bimg {
+            height: 45px;
+            width: auto;
+        }        
+        #nav_icons {
+            text-align: right;
+        }
+        #nav_icons a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }        
+        #nav_icons i {
+            margin: 0px 15px;
+            font-size: 1.2em;
+            color: black;
+        }        
+        #nav_icons i:hover {
+            color: #e4b961;
+        }        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }        
+        .dropdown-content a {  
+            display: block;      
+            padding: 3%;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+        .m_show
+        {
+            display: none;
+        }
+        .offcanvas-body a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .m_hide div
+        {
+            display: inline-block;
+        }
+
+        @media screen and (min-width:0px) and (max-width:720px) {
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+           
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="header">        
+        <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+
+         <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+       <div class="m_show"> <i class="fas fa-search"></i></div>
+
+       
+        <div id="logo">                
+            <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+        </div>
+        <div id="nav_icons">
+            <div class="dropdown">
+                <a href="#">All Products</a>
+                <div class="dropdown-content">
+                    <a href='menspage.html'>Mens Products</a>
+                    <a href='womenPage.html'>Womens Products</a>
+                </div>
+            </div>
+            <a class="m_hide">            
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+        
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasTopLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                    <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </a>
+            <a href="wishlist.html"><i class="far fa-heart"></i></a>
+            <div class="dropdown">
+                <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                <div class="dropdown-content">
+    
+                    <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                    <a href='checkout.html'>Checkout</a>
+                    <a href='login.html'>Sign In</a>
+                    <a href='signup.html'>Create An Account</a>
+                </div>
+            </div>
+    
+            <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

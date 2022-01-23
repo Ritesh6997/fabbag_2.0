@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Page</title>
+    <script src="https://kit.fontawesome.com/949c241a8a.js" crossorigin="anonymous"></script>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+    <style>body {
+        box-sizing: border-box;
+        padding: 0%;
+        margin: 0%;
+    }        
+    #header {
+        margin-bottom: 2%;
+        padding: 0% 1%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;     
+        height: 70px;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        position: fixed;
+        left: 0;
+        right:0;
+        top:0; 
+        z-index: 999;   
+    }      
+    #subs {
+        display: inline-block;
+    }        
+    #subs a {
+        font-size: 1.6em;
+        font-weight: bolder;
+        text-decoration: none;
+        color: black;
+    }      
+    #header a:hover {
+        color: #e4b961;
+    }        
+    #logo {
+        text-align: center;
+    }        
+    #bimg {
+        height: 45px;
+        width: auto;
+    }        
+    #nav_icons {
+        text-align: right;
+    }
+    #nav_icons a {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }        
+    #nav_icons i {
+        margin: 0px 15px;
+        font-size: 1.2em;
+        color: black;
+    }        
+    #nav_icons i:hover {
+        color: #e4b961;
+    }        
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }        
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f1f1f1;
+        min-width: 150px;
+        z-index: 1;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }        
+    .dropdown-content a {  
+        display: block;      
+        padding: 3%;
+        font-size: 0.8em;
+        margin-right: 5px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+        text-align: left;
+    }
+    .m_show
+    {
+        display: none;
+    }
+    .m_hide div
+    {
+        display: inline-block;
+    }
+
+        
+        #Subscontainer{
+           width: 40%;
+            margin: auto;
+             padding:2%;
+             margin-top: 80px;
+        }
+        #Subscontainer>div{
+           width: 100%;
+            font-size: 30px;
+            text-align: left;
+            padding: 2%;
+            padding-left: 0%;
+            margin:auto;
+            margin-bottom: 2%;
+            font-weight: bold;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        form>input{
+            width: 97%;
+            height: 30px;
+            margin-bottom: 5%;
+            border-radius: 5px;
+            border:2px solid #d0d0d0;
+            
+        }
+        form>div{
+            width:40 ;
+            font-family: Helvetica;
+            font-size: 16px;
+            color: #5d5d5d;
+            
+        }
+        form{
+            width: 100%;
+            margin: auto;
+            padding:2%;
+            padding-top: 5%;
+            background-color: white;
+            border-radius: 5px;
+        }
+        #subscribebutton{
+            width: 30%;
+            height: 40px;
+            background-color: #5d5d5d;
+            color: white;
+        }
+
+        #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+            margin-top: 20%;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+
+        /* --------------------Media Queries */
+    @media screen and (min-width:0px) and (max-width:720px){
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+        #bottomcontainer{
+            grid-template-columns:repeat(2,1fr);
+            grid-template-rows: 175px 250px 50px;
+            grid-template-areas:
+                        "i c "
+                        "i n "
+                        "b b ";
+            box-shadow: 0 3px 14px #7d7d7d;
+        }
+    }
+        @media screen and (min-width:0px) and (max-width:320px)
+            {
+                #bottomcontainer{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-rows: 300px 150px 250px 50px;
+            grid-template-areas:
+                        "i"
+                        "c"
+                        "n"
+                        "b";
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="header">        
+        <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+
+         <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+       <div class="m_show"> <i class="fas fa-search"></i></div>
+
+       
+        <div id="logo">                
+            <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+        </div>
+        <div id="nav_icons">
+            <div class="dropdown">
+                <a href="#">All Products</a>
+                <div class="dropdown-content">
+                    <a href='menspage.html'>Mens Products</a>
+                    <a href='womenPage.html'>Womens Products</a>
+                </div>
+            </div>
+            <a class="m_hide">            
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+        
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasTopLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                    <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </a>
+            <a href="wishlist.html"><i class="far fa-heart"></i></a>
+            <div class="dropdown">
+                <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                <div class="dropdown-content">
+    
+                    <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                    <a href='checkout.html'>Checkout</a>
+                    <a href='login.html'>Sign In</a>
+                    <a href='signup.html'>Create An Account</a>
+                </div>
+            </div>
+    
+            <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!------------------------------------ header ends------------------------------------ -->
+    <div id="Subscontainer">
+        <div>Welcome to the Fab Family!</div>
+        <form action="index.html">
+            <div>First Name</div>
+            <input type="text" required>
+            <div>Last Name</div>
+            <input type="text" required>
+            <div>Email Address</div>
+            <input type="email" required>
+            <div>Phone</div>
+            <input type="number" required>
+            <input  id="subscribebutton" type="submit" value="Subscribe">
+
+        </form>
+    </div>
+   
+    <div id="bottomcontainer">
+        <div class="i">
+            <h3>Information</h3>
+            <div onclick="window.location.href='About.html'">About Us</div>
+            <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+            <div onclick="window.location.href='FAQ.html'">FAQ</div>
+            <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+            <div onclick="window.location.href='contact.html'">Contact Us</div>
+            <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+            <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+            <div onclick="window.location.href='policy.html'">Privacy Policy</div>
+        </div>
+        <div class="c">
+            <h3>Customer Care</h3>
+            <div>Call:022-6805-6010 
+                <div>
+                    (Monday to Firday :9am-7pm)
+                </div>
+                
+            </div>
+            <div>Mail:crew@fabbag.com</div>
+        </div>
+        <div class="n">
+            <h3>Newsletter</h3>
+            <form action="">
+                <div>Signup for the latest offer,update and news</div>
+                <input id="Emailtag" type="email" placeholder=" your email address">
+                <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                <div>Don't worry we don't spam</div>
+            </form>
+        </div>
+        <div class="b">
+            <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("subscribebutton").addEventListener("click",ale)
+    function ale()
+    {
+       // alert("Suscessfully Subscribed")
+    }
+</script>

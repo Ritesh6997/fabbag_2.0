@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://use.fontawesome.com/cdf5676fe9.js"></script>
+    <script src="https://kit.fontawesome.com/11ec43b564.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ 
+    <title>Product DESCRIPTION</title>
+
+    <style>
+           #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+        @media only screen and (min-width :0px) and (max-width :320px){
+            #bottomcontainer{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 175px 175px 175px 175px 175px 50px;
+                grid-template-areas: 
+                "i i"
+                "i i"
+                "c c"
+                "n n"
+                "n n"
+                "b b"
+                ;
+                grid-gap: 10px;
+                padding: 5% 5%;
+
+                
+            }
+            .n>form>input{
+            margin: 2% 0%;
+            /* margin-bottom: 0px; */
+            
+        }
+            .c{
+                align-self: center; 
+                 justify-self: center;
+                margin-top: -200px;
+                /* padding-left: 12%; */
+                text-align: center;
+            }
+            .b{
+                /* margin-top: -130px; */
+                padding-bottom: 0px;
+            }
+            #i_last{
+                margin-bottom: 0px;
+            }
+            .b{
+                margin-top: -250px;
+                padding-bottom: 0px;
+            }
+            .n{
+                margin-top: -130px;
+                padding-top: 10px;
+            }           
+        }
+           
+        
+
+        @media only screen and (min-width :321px) and (max-width :800px){
+            #bottomcontainer{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: 175px 175px 175px 175px 175px 50px;
+                grid-template-areas: 
+                "i i"
+                "i i"
+                "c c"
+                "n n"
+                "n n"
+                "b b"
+                ;
+                /* grid-gap: 10px; */
+                padding: 5% 4%;
+
+                
+            }
+            .n>form>input{
+            margin: 2% 0%;
+            /* margin-bottom: 0px; */
+            
+        }
+            .c{
+                align-self: center;
+                justify-self: center;
+                text-align: center;
+            }
+            .b{
+                margin-top: -130px;
+                padding-bottom: 0px;
+            }
+
+           
+        }
+         /* starting of mine>       */
+        #harshcon{
+            margin-top: 80px;
+            background-color: white;
+            display: grid;
+        }
+        
+        #box1{
+            color: #555;
+            background-color: white;
+            /*border:1px solid red; */
+            width: 100%;
+            font-family: "Georgia";
+            grid-column-end: 1;
+            grid-column-start: 1;
+            grid-row-end: 2;
+            grid-row-start: 1;
+        }
+        
+        #box2{
+            margin-right: 110px;
+            margin-left: 32px;
+            background-color: white;
+            color: #3a3a3a;
+            grid-column-end: 18;
+            grid-column-start: 2;
+            grid-row-end: 30;
+            grid-row-start: 1;
+        }
+        
+        .center{
+            width: 462px;
+            margin-left: 86px;
+            /* border:1px solid red; */
+        }
+        
+        p1{
+            font-weight: bold;
+        }
+        
+        #buttonhover1{
+            color: black;
+        }
+        
+        #buttonhover2{
+            color: grey;
+            padding-top: 100px;
+            ;
+        }
+        
+        #buttonhover2:hover{
+            color: black;
+        }
+        
+        #buttonhover3{
+            color: grey;
+        }
+        
+        #buttonhover3:hover{
+            color: black;
+        }
+        
+    
+        /* }
+style="font-size: 20px; font-weight: bold;" */
+        
+        #placeholder-boxh{
+            display: block;
+            width: 145px;
+            height: 50px;
+            border: 1px solid #888;
+            box-sizing: border-box;
+            
+        }
+        /* - 1 + Button */
+        
+        #button1{
+            border: white;
+            /* border: 1px solid red; */
+            color: rgb(70, 70, 70);
+            font-size: 30px;
+            background-color: white;
+            border-radius: 0px solid white;
+            margin-top: 0px;
+            margin-left: 6px;
+            margin-right: 30px;
+            margin-bottom: 1px;
+            padding-bottom: 0px;
+            padding: 1px;
+            opacity: 1;
+        }
+        
+        #button1:hover{
+            color: #e5b95f;
+            
+        }
+        
+        #button2{
+            /* border: 1px solid red; */
+            border: white;
+            background-color: white;
+            color: rgb(70, 70, 70);
+            font-size: 30px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 1px;
+            margin-left: 20px;
+            margin-right: 5px;
+        }
+        
+        #button2:hover{
+            color: #e5b95f;
+            ;
+        }
+        
+        #numberdigit{
+            background-color: black;
+            color: grey;
+            font-weight: bold;
+            font-size: 8px;
+        }
+        
+        #addtocart{
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            background-color: #252525;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 10px;
+            height: 38px;
+        }
+        
+        #addtocart:hover{
+            background-color: #e5b95f;
+            ;
+            color: white;
+        }
+        
+        #addtocart:hover span{
+            display: none;
+        }
+        
+        #addtocart:hover::after{
+            content: "Shop";
+            text-align: center;
+            font-size: 20px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+            margin-top: 1px;
+            margin-bottom: 10px;
+            background-color: #e5b95f;
+            color: white;
+        }
+        
+        #emoji1{
+            margin-left: 10px;
+            margin-right: 20px;
+            font-size: 30px;
+        }
+        
+        .fa-twitter:hover{
+            color: #e5b95f !important;
+        }
+        
+        #box3{
+            display: block;
+            margin-right: 106px;
+            margin-left: 85px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-size: 18px;
+            color: rgb(59, 59, 59);
+            font-family: "Georgia";
+        }
+        
+        #box3rp{
+            display: none;
+            margin-right: 106px;
+            margin-left: 85px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-size: 18px;
+            color: rgb(59, 59, 59);
+            font-family: "Georgia";
+        }
+        
+        #box3vp{
+            margin-right: 106px;
+            margin-left: 85px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-size: 18px;
+            color: rgb(59, 59, 59);
+            font-family: "Georgia";
+        }
+        
+        #box3cr{
+            display: none;
+            margin-right: 106px;
+            margin-left: 85px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-size: 18px;
+            color: rgb(59, 59, 59);
+            font-family: "Georgia";
+        }
+        
+        #harshbox31{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 340PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            background-color: #e5b95f;
+        }
+        
+        #harshbox32{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            /* background-color: #e5b95f; */
+        }
+        
+        #harshbox32i{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            background-color: #e5b95f;
+        }
+        
+        #harshbox32:hover{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            background-color: #e5b95f !important;
+        }
+        
+        #harshbox33{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+        }
+        
+        #harshbox33:hover{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            background-color: #e5b95f !important;
+        }
+        
+        #harshbox34{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+        }
+        
+        #harshbox34:hover{
+            text-align: center;
+            font-size: 14px;
+            margin-left: 2PX;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 600PX;
+            height: 100PX;
+            border-radius: 30PX;
+            background-color: #e5b95f !important;
+        }
+        
+        #harshmarker{
+            margin-left: 20px;
+            padding-left: 0px;
+            color: rgb(56, 55, 55);
+            font-family: "poppins";
+            text-align: -webkit-match-parent;
+            /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,monospace,ElegantIcons,Roboto; */
+        }
+        
+        #box12b{
+            opacity: 0.4;
+        }
+        
+        /* #box12b:active{
+            opacity: 1;
+        } */
+        
+        #buttonval{
+            font-size: 17px;
+            font-weight: bold;
+            padding-bottom: 1px;
+            padding-right: 22px;
+            width: 34px;
+            margin-top: 1px;
+            margin-bottom: 10px;
+            border: 0px;
+        }
+        
+        .fa:hover{
+            color: #e5b95f !important;
+        }
+        
+        #angleh{
+            margin-left: 1280px;
+            font-size: 39px;
+        }
+        
+        #angleh:hover{
+            color: #e5b95f !important;
+        }
+        
+        #reviewcus{
+            display: grid;
+        }
+        
+        #reviewcus1{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        
+        #reviewcus2{
+            grid-row-start: 2;
+            grid-row-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+        #buttonhover1:hover{
+            color:black  !important;
+           font-size: 16px !important;
+            margin-top: 10px  !important;
+            margin-bottom: 0px  !important;
+           
+        }
+        #buttonhover2:hover{
+color:black !important;
+margin-top: 10px  !important;
+font-size: 16px !important;
+            margin-bottom: 0px  !important; 
+        }
+        #buttonhover3:hover{
+            color:black !important;
+            font-size: 16px !important;
+        }
+     
+#box3rp1{
+ grid-column-start: 1; grid-column-end: 1; grid-row-start: 1;grid-row-end: 1;
+}
+#box3rp2{
+    grid-column-start: 2; grid-column-end: 2; grid-row-start: 1;grid-row-end: 1;
+}
+#box3rp3{
+     grid-column-start: 3; grid-column-end: 3; grid-row-start: 1;grid-row-end: 1;
+}
+#box3addtocart3:hover{
+    color: black  !important; font-weight: 400;
+}
+#box3addtocart2:hover{
+    color: black  !important; font-weight: 400;
+}
+#box3addtocart1:hover{
+    color: black  !important; font-weight: 400;
+}
+ /* header */
+ body {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }        
+        #header {
+            margin-bottom: 2%;
+            padding: 0% 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;     
+            height: 70px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: fixed;
+            left: 0;
+            right:0;
+            top:0; 
+            z-index: 999;   
+        }      
+        #subs {
+            display: inline-block;
+        }        
+        #subs a {
+            font-size: 1.6em;
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+        }      
+        #header a:hover {
+            color: #e4b961;
+        }        
+        #logo {
+            text-align: center;
+        }        
+        #bimg {
+            height: 45px;
+            width: auto;
+        }        
+        #nav_icons {
+            text-align: right;
+        }
+        #nav_icons a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }        
+        #nav_icons i {
+            margin: 0px 15px;
+            font-size: 1.2em;
+            color: black;
+        }        
+        #nav_icons i:hover {
+            color: #e4b961;
+        }        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }        
+        .dropdown-content a {  
+            display: block;      
+            padding: 3%;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+        .m_show
+        {
+            display: none;
+        }
+        .offcanvas-body a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .m_hide div
+        {
+            display: inline-block;
+        }
+
+        @media screen and (min-width:0px) and (max-width:720px){
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+        #bottomcontainer{
+            grid-template-columns:repeat(2,1fr);
+            grid-template-rows: 175px 250px 50px;
+            grid-template-areas:
+                        "i c "
+                        "i n "
+                        "b b ";
+            box-shadow: 0 3px 14px #7d7d7d;
+        }
+    }
+        @media screen and (min-width:0px) and (max-width:320px)
+            {
+                #bottomcontainer{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-rows: 300px 150px 250px 50px;
+            grid-template-areas:
+                        "i"
+                        "c"
+                        "n"
+                        "b";
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="header">        
+        <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+
+         <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+       <div class="m_show"> <i class="fas fa-search"></i></div>
+
+       
+        <div id="logo">                
+            <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+        </div>
+        <div id="nav_icons">
+            <div class="dropdown">
+                <a href="#">All Products</a>
+                <div class="dropdown-content">
+                    <a href='menspage.html'>Mens Products</a>
+                    <a href='womenPage.html'>Womens Products</a>
+                </div>
+            </div>
+            <a class="m_hide">            
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+        
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasTopLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                    <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </a>
+            <a href="wishlist.html"><i class="far fa-heart"></i></a>
+            <div class="dropdown">
+                <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                <div class="dropdown-content">
+    
+                    <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                    <a href='checkout.html'>Checkout</a>
+                    <a href='login.html'>Sign In</a>
+                    <a href='signup.html'>Create An Account</a>
+                </div>
+            </div>
+    
+            <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <br><br><br>
+    <div id="harshcon">
+        <div id="box1">
+            <img id="box10" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966" class="center">
+            <div id="box12">
+                <img id="box12b" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966" style="width: 20%; margin-left: 86px; margin-top: 0px;padding-top: 0px;" onclick="transparentchideharsh()">
+            </div>
+        </div>
+     
+        <div id="box2">
+            <a>Home</a>
+            <br>
+
+            <h1>
+                The Beauty Resolution January Fab Bag
+            </h1>
+            <br>
+            <h1 id="rs599price" style="display: block;">
+                Rs. 599.00</h1>
+            <h1 id="rs1599price" style="display: none;">
+                Rs. 1,599.00</h1>
+            <h1 id="rs2899price" style="display: none;">Rs. 2,899.00
+            </h1>
+
+            <P>New Year calls for All New Beauty! Discover 4 makeup & skincare essentials this month from your favorite brands..</P>
+
+            <P1>
+                Plans
+            </P1>
+            <br>
+            <br>
+
+            <label id="buttonhover1" style="background-color: rgb(209, 207, 207); height:40px; margin-right:10px; margin-top:10px; margin-bottom:10px; padding-top: 7px;  padding-bottom: 4px; font-size: 15PX; padding-left: 3px; padding-right: 3px;" onclick="harshpricechangeonclick1month()">1 MONTH
+</label>
+            <label id="buttonhover2" style="background-color: rgb(209, 207, 207); height:40px; margin-right:10px; margin-top:10px; margin-bottom:10px; padding-top: 7px; padding-bottom: 4px; font-size: 15PX; padding-left:3px; padding-right: 3px;" onclick="harshpricechangeonclick3month()">3 MONTH
+</label>
+            <label id="buttonhover3" style="background-color: rgb(209, 207, 207); height:40px; margin-right:10px; margin-top:10px; margin-bottom:10px; padding-top: 7px; padding-bottom: 4px; font-size: 15PX; padding-left: 3px; padding-right:3px;" onclick="harshpricechangeonclick6month()">6 MONTH
+</label>
+
+            <br>
+            <br>
+            
+            <!-- <div style="width:138px;height:40px;border:1px solid grey;"><h1>-</h1> 1 +</div> -->
+             <div id="placeholder-boxh">
+
+                <button id="button1" onclick="reducecart(),exampleharsu()">-</button>
+                <output id="buttonval">1
+                    </output>
+                <button id="button2" onclick="increasecart(),exampleharsu()">+</button>
+            </div>
+            <br> 
+
+             <div id="addtocart" onclick="exampleharsu()"><span>ADD TO CART</span>
+
+            </div> 
+            <br>
+
+            <div id="emoji">
+                <a id="emoji1" href="https://twitter.com/share?url=https://www.fabbag.com/products/subscribe&text=The%20Beauty%20Resolution%20January%20Fab%20Bag"><i class="fa fa-twitter" id="emoji12" style="color: rgb(148, 148, 148); font-size: 24px;"></i></a>
+                <a id="emoji1" href="https://www.facebook.com/sharer/sharer.php?u=https://www.fabbag.com/products/subscribe"><i class="fa fa-facebook" style="color: rgb(148, 148, 148); font-size: 24px;"></i></a>
+                <a id="emoji1" href="https://plus.google.com/share?url=https://www.fabbag.com/products/subscribe"><i class="fa fa-google-plus" style="color: rgb(148, 148, 148); font-size: 24px;"></i></a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <a id="harshbox31" onclick="replaceds()">DESCRIPTION</a>
+    <a id="harshbox32" onclick="replacevp()">VIEW PLANS</a>
+    <a id="harshbox33" onclick="replacerp()">RETURNS POLICY</a>
+    <a id="harshbox34" onclick="replacecr()">CUSTOMER REVIEWS</a>
+
+    <br><br><br>
+    <div id="box3" style="display:block">
+        <P>New Year calls for All New Beauty! Discover 4 makeup & skincare essentials this month from your favorite brands in the Beauty Re-Solution January Fab Bag.</P>
+
+        <P>Here's what you can expect inside your January Fab Bag:</P>
+
+        <li id="harshmarker">SUGAR Wonder Woman 24 HR Lip Lacquer of your choice!*</li>
+        <li id="harshmarker">Coco Soul Hair and Scalp Cleanser/Shampoo</li>
+        <li id="harshmarker">Palmer's Hair Style Hold</li>
+        <li id="harshmarker">Baiser India Nourishing Lip Oil</li>
+        <br>
+
+        <P style="font-weight: 400; font-family: inherit;">*Two offers cannot be clubbed. Makeup choice will be available on the order confirmation page, on a first-come, first-served basis. Bonus product will be customized by the Fab Bag Crew.</P>
+
+        <P>FAB BAG delivers the best of beauty and makeup products once a month, customized just for you.</P>
+
+    </div>
+    <div id="box3rp" style="display: none" ;>
+        <li id="harshmarker">Returns Policy for FAB BAG Monthly Subscriptions: 100% Happiness or Money-Back Guarantee</li>
+        <li id="harshmarker">For more details, please see our Policy <a style="color: #e5b95f; font-family: poppins;" href="https://www.fabbag.com/pages/returns-and-refunds">here.</a></li>
+        <li id="harshmarker">Should you have any questions regarding this product, please feel free to get in touch with our friendly Customer Experience Team at crew@fabbag.com within 48 hours of receiving the shipment or call us at 022-4896-7878 Mon - Fri, 9am - 7pm.
+        </li>
+    </div>
+
+    <div id="box3vp" style="display: none; margin-left: 20px; margin-right: 20px;">
+        <br><br>
+     <div style="display: grid; margin-left: 30px; margin-right: 30px;">
+        <div id="box3rp1"><div style="width:420px;height:100px;border:1px solid grey;"><br>
+            <p style=" font-weight: 700; font-size: 24px;  line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;">1 MONTH</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">SUBSCRIPTION</p></div><div style="width:420px;height:100px;border:1px solid grey;">
+                <p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;"><br>Rs. 599.00</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">/ per month</p></div>
+    
+
+    <div style="width:420px;height:325px;border:1px solid grey;"><div style="width:420px;height:100px; "><p style="font-weight: 700; font-size: 20px;  line-height: 24px;letter-spacing: 0;padding-bottom: 0px; margin-bottom: 0px;color: #e5b95f;;text-align: center; font-family: poppins;"><br>ONE TIME PAYMENT</p><p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-top: 1px; margin-top: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;">Rs. 599.00</p></div><div></div>
+    </div>
+    <div style="width:420px;height:100px;border:1px solid #e5b95f; background-color: #e5b95f; border-radius: 1px;">
+        <div id="box3addtocart1" style="margin-left:25px; margin-right:25px; COLOR:WHITE; text-align:center;margin-top:25px; margin-bottom:10px;width:368px;height:30px;border-radius:4px; border: 1.4px solid white; padding-top: 0px; padding-bottom: 0px;" onclick="box3addtocart11()">ADD TO CART</div></div>
+        <br><br>
+    </div>
+    <div id="box3rp2"><div style="width:420px;height:100px;border:1px solid grey;">
+        <p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;"><br>3 MONTH</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">SUBSCRIPTION</p></div><div style="width:420px;height:100px;border:1px solid grey;">
+            <p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;"><br>Rs. 533.00</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">/ per month</p></div>
+
+            <div style="width:420px;height:325px;border:1px solid grey;"><div style="width:420px;height:100px; "><p style="font-weight: 700; font-size: 20px;  line-height: 24px;letter-spacing: 0;padding-bottom: 0px; margin-bottom: 0px;color: #e5b95f;;text-align: center; font-family: poppins;"><br>ONE TIME PAYMENT (11% OFF)</p><p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-top: 1px; margin-top: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;">Rs. 1,599.00 <strike>Rs. 1,797</strike></p></div><div></div>
+        </div>
+        <div style="width:420px;height:100px;border:1px solid #e5b95f;  background-color: #e5b95f;">
+            <div style="width:420px;height:100px;border:1px solid #e5b95f; background-color: #e5b95f; border-radius: 1px;">
+                <div id="box3addtocart2" style="margin-left:25px; margin-right:25px; COLOR:WHITE; text-align:center;margin-top:25px; margin-bottom:1px;width:368px;height:30px;border-radius:4px; border: 1.4px solid white; padding-top: 0px; padding-bottom: 0px; " onclick="box3addtocart21()">ADD TO CART</div></div>
+
+</div>
+    <br><br>
+</div>
+<div id="box3rp3"><div style="width:420px;height:100px;border:1px solid grey;">
+    <p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;"><br>6 MONTH</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">SUBSCRIPTION</p></div><div style="width:420px;height:100px;border:1px solid grey;">
+        <p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-bottom: 2px; margin-bottom: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;"><br>Rs. 483.00</p><p style="font-size: 18px; margin-top: 2px; padding-top: 2px;line-height: 24px; font-family: poppins;letter-spacing: 0;color: #555;text-align: center;">/ per month</p></div>
+
+        <div style="width:420px;height:325px;border:1px solid grey;"><div style="width:420px;height:100px; "><p style="font-weight: 700; font-size: 20px;  line-height: 24px;letter-spacing: 0;padding-bottom: 0px; margin-bottom: 0px;color: #e5b95f;;text-align: center; font-family: poppins;"><br>ONE TIME PAYMENT (19% OFF)</p><p style=" font-weight: 700; font-size: 24px;    line-height: 24px;letter-spacing: 0;padding-top: 1px; margin-top: 2px;color: rgb(59, 59, 59);text-align: center; font-family: poppins;">Rs. 2,899.00 <strike>Rs. 3,594</strike></p></div><div></div></div>
+
+<div style="width:420px;height:100px;border:1px solid #e5b95f; background-color: #e5b95f;">
+    <div style="width:420px;height:100px;border:1px solid #e5b95f;; background-color: #e5b95f; border-radius: 1px;">
+        <div id="box3addtocart3" style="margin-left:25px; margin-right:25px; COLOR:WHITE; text-align:center;margin-top:25px; margin-bottom:1px;width:368px;height:30px;border-radius:4px; border: 1.4px solid white; padding-top: 0px; padding-bottom: 0px;" onclick="box3addtocart31()">ADD TO CART</div></div></div><br><br>
+</div>
+    </div>
+
+</div>
+    <div id="box3cr" style="display: none; font-size: 18px;
+    color: #161616; ">
+
+
+
+        <P>Customer Reviews</P>
+        <div id="reviewcus">
+            <div id="reviewcus1">
+                <p style="font-size: 15px;">No reviews yet</p>
+            </div>
+            <div id="reviewcus2">
+                <P style="color:#e5b95f;text-overflow: ellipsis;  text-decoration: underline; text-align: right; ">Write a review</P>
+            </div>
+        </div>
+    </div>
+
+    <br> <br> <br>
+    <div id="bottomcontainer">
+        <div class="i">
+            <h3>Information</h3>
+            <div onclick="window.location.href='About.html'">About Us</div>
+            <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+            <div onclick="window.location.href='FAQ.html'">FAQ</div>
+            <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+            <div onclick="window.location.href='contact.html'">Contact Us</div>
+            <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+            <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+            <div onclick="window.location.href='policy.html'" id="i_last">Privacy Policy</div>
+        </div>
+        <div class="c">
+            <h3>Customer Care</h3>
+            <div>Call:022-6805-6010 
+                <div>
+                    (Monday to Firday :9am-7pm)
+                </div>
+                
+            </div>
+            <div>Mail:crew@fabbag.com</div>
+        </div>
+        <div class="n">
+            <h3>Newsletter</h3>
+            <form action="">
+                <div>Signup for the latest offer,update and news</div>
+                <input id="Emailtag" type="email" placeholder=" your email address">
+                <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                <div>Don't worry we don't spam</div>
+            </form>
+        </div>
+        <div class="b">
+            <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+        </div>
+    </div>
+
+</body>
+
+
+</html>
+<script>
+    var harshcount = 1;
+    var totalprice2 = 599;
+ function scrolltop(){
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+ }
+    function transparentchideharsh(){
+        document.getElementById("box12b").style.opacity="1";
+    }
+    function box3addtocart11(){
+        document.getElementById("box3addtocart1").style.borderColor="black";
+        document.getElementById("box3addtocart2").style.borderColor="white";
+        document.getElementById("box3addtocart3").style.borderColor="white";
+    }
+    function box3addtocart21(){
+        document.getElementById("box3addtocart2").style.borderColor="black";
+        document.getElementById("box3addtocart1").style.borderColor="white";
+        document.getElementById("box3addtocart3").style.borderColor="white";
+    }
+    function box3addtocart31(){
+        document.getElementById("box3addtocart3").style.borderColor="black";
+        document.getElementById("box3addtocart2").style.borderColor="white";
+        document.getElementById("box3addtocart1").style.borderColor="white";
+    }
+
+    function exampleharsu(){
+        var totalprice1 = Number(document.getElementById("buttonval").value); 
+        var totalpricefinal = totalprice1 * totalprice2;
+sessionStorage.setItem("totalpricefinal", JSON.stringify(totalpricefinal));
+sessionStorage.setItem("totalprice1", JSON.stringify(totalprice1));
+       
+        var arrTotalpricefinal=[totalpricefinal.toFixed(2),totalprice1]
+        console.log(arrTotalpricefinal);
+    }
+
+    function harshpricechangeonclick1month(){
+        totalprice2 = 599;
+        document.getElementById("buttonhover1").style.color="black";
+        document.getElementById("buttonhover2").style.color="grey";
+        document.getElementById("buttonhover3").style.color="grey";
+        document.getElementById("rs599price").style.display="block";
+        document.getElementById("rs1599price").style.display="none";
+        document.getElementById("rs2899price").style.display="none";
+
+    }
+
+    function harshpricechangeonclick3month(){
+        totalprice2 = 1599;
+        document.getElementById("buttonhover2").style.color="black";
+        document.getElementById("buttonhover1").style.color="grey";
+        document.getElementById("buttonhover3").style.color="grey";
+        document.getElementById("rs599price").style.display="none";
+        document.getElementById("rs1599price").style.display="block";
+        document.getElementById("rs2899price").style.display="none";
+    }
+
+    function harshpricechangeonclick6month(){
+        totalprice2 = 2899;
+        document.getElementById("buttonhover3").style.color="black";
+        document.getElementById("buttonhover2").style.color="grey";
+        document.getElementById("buttonhover1").style.color="grey";
+        document.getElementById("rs599price").style.display="none";
+        document.getElementById("rs1599price").style.display="none";
+        document.getElementById("rs2899price").style.display="block";
+    }
+
+    function increasecart(){
+        harshcount++;
+        document.getElementById("buttonval").value = harshcount;
+    }
+
+    function replacevp(){
+        document.getElementById("harshbox31").style.backgroundColor="white";
+        document.getElementById("harshbox32").style.backgroundColor = "#e5b95f";
+        document.getElementById("harshbox33").style.backgroundColor = "white";
+        document.getElementById("harshbox34").style.backgroundColor = "white";
+        document.getElementById("box3vp").style.display = "block";
+        document.getElementById("box3").style.display = "none";
+        document.getElementById("box3rp").style.display = "none";
+        document.getElementById("box3cr").style.display = "none";
+
+    }
+
+    function replacerp(){
+        document.getElementById("harshbox31").style.backgroundColor = "white";
+        document.getElementById("harshbox32").style.backgroundColor = "white";
+        document.getElementById("harshbox33").style.backgroundColor = "#e5b95f";
+        document.getElementById("harshbox34").style.backgroundColor = "white";
+        document.getElementById("box3").style.display = "none";
+        document.getElementById("box3vp").style.display = "none";
+        document.getElementById("box3rp").style.display = "block";
+        document.getElementById("box3cr").style.display = "none";
+    }
+
+    function replacecr(){
+        document.getElementById("harshbox31").style.backgroundColor = "white";
+        document.getElementById("harshbox32").style.backgroundColor = "white";
+        document.getElementById("harshbox33").style.backgroundColor = "white";
+        document.getElementById("harshbox34").style.backgroundColor = "#e5b95f";
+        document.getElementById("box3").style.display = "none";
+        document.getElementById("box3vp").style.display = "none";
+        document.getElementById("box3rp").style.display = "none";
+        document.getElementById("box3cr").style.display = "block";
+    }
+
+    function replaceds(){
+        document.getElementById("harshbox31").style.backgroundColor = "#e5b95f";
+        document.getElementById("harshbox32").style.backgroundColor = "white";
+        document.getElementById("harshbox33").style.backgroundColor = "white";
+        document.getElementById("harshbox34").style.backgroundColor = "white";
+        document.getElementById("box3").style.display = "block";
+        document.getElementById("box3vp").style.display = "none";
+        document.getElementById("box3rp").style.display = "none";
+        document.getElementById("box3cr").style.display = "none";
+    }
+        
+    function reducecart(){
+        document.getElementById("button1").style.fontSize="32px"
+        if (harshcount >= 2) {
+            harshcount--;
+            document.getElementById("buttonval").value = harshcount;            
+        }
+    }
+    function reducecarti(){
+        document.getElementById("button1").style.fontSize="30px"
+    }
+    
+</script>

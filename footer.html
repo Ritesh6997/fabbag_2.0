@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>fabbag footer</title>
+    <script src="https://kit.fontawesome.com/949c241a8a.js" crossorigin="anonymous"></script>   
+     <style>
+        #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="bottomcontainer">
+        <div class="i">
+            <h3>Information</h3>
+            <div onclick="window.location.href='About.html'">About Us</div>
+            <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+            <div onclick="window.location.href='FAQ.html'">FAQ</div>
+            <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+            <div onclick="window.location.href='contact.html'">Contact Us</div>
+            <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+            <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+            <div onclick="window.location.href='policy.html'">Privacy Policy</div>
+        </div>
+        <div class="c">
+            <h3>Customer Care</h3>
+            <div>Call:022-6805-6010 
+                <div>
+                    (Monday to Firday :9am-7pm)
+                </div>
+                
+            </div>
+            <div>Mail:crew@fabbag.com</div>
+        </div>
+        <div class="n">
+            <h3>Newsletter</h3>
+            <form action="">
+                <div>Signup for the latest offer,update and news</div>
+                <input id="Emailtag" type="email" placeholder=" your email address">
+                <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                <div>Don't worry we don't spam</div>
+            </form>
+        </div>
+        <div class="b">
+            <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+        </div>
+    </div>
+</body>
+</html>

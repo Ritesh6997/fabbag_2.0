@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body{
+            background-color: #6b6b6b;
+        }
+        #container{
+            width: 60%;
+            margin: auto;
+           margin-top: 70px;
+            
+            height: 400px;
+            background-color: #6b6b6b;
+        }
+        #box{
+            width: 50%;
+            height: 230px;
+            margin: auto;
+            border: 1px solid blue;
+            margin-top: 100px;
+            padding:40px 30px  30px;
+            background-color: #444444;
+            text-align: center;
+        }
+        #flex{
+            display: flex;
+            justify-content: space-between;
+           
+        }
+        #name,#cardnumber{
+            width:98%;
+            height: 30px;
+            
+        }
+        #cvv,#date{
+            width:45%;
+            height: 30px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <input type="text" placeholder="Name on card" id="name">
+            <br><br>
+            <input type="text" placeholder="Enter Card Number" id="cardnumber">
+            <br><br>
+            <div id="flex">
+                <input type="text" placeholder="Expiry month" id="date">
+                <input type="number" placeholder="Enter CVV" id="cvv">
+            </div>
+            <br><br>
+            <button>Send OTP</button>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click",sendotpfun)
+    function sendotpfun(){
+        var cardname=document.querySelector("#name").value
+        var cardnumber=document.querySelector("#cardnumber").value
+        var expirydate=document.querySelector("#date").value
+        var cvv=document.querySelector("#cvv").value
+        if(cardname==""&&expirydate==""&&cardnumber==""&&cvv==""){
+            alert("Payment details empty")
+        }
+        else{
+            if(cardname==""){
+            alert("Cardname empty")
+        }
+       else if(cardnumber==""){
+        alert("Cardnumber empty")
+       }
+       else if(expirydate==""){
+        alert("Expirydate empty")
+       }
+       else if(cvv==""){
+        alert("Cvv empty")
+       }
+       else{
+           window.location.href="otp.html"
+       }
+        }
+       
+    }
+   
+</script>

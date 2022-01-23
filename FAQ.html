@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <script src="https://kit.fontawesome.com/949c241a8a.js" crossorigin="anonymous"></script>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }        
+        #header {
+            margin-bottom: 2%;
+            padding: 0% 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;     
+            height: 70px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: fixed;
+            left: 0;
+            right:0;
+            top:0; 
+            z-index: 999;   
+        }      
+        #subs {
+            display: inline-block;
+        }        
+        #subs a {
+            font-size: 1.6em;
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+        }      
+        #header a:hover {
+            color: #e4b961;
+        }        
+        #logo {
+            text-align: center;
+        }        
+        #bimg {
+            height: 45px;
+            width: auto;
+        }        
+        #nav_icons {
+            text-align: right;
+        }
+        #nav_icons a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }        
+        #nav_icons i {
+            margin: 0px 15px;
+            font-size: 1.2em;
+            color: black;
+        }        
+        #nav_icons i:hover {
+            color: #e4b961;
+        }        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }        
+        .dropdown-content a {  
+            display: block;      
+            padding: 3%;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+        .m_show
+        {
+            display: none;
+        }
+        .offcanvas-body a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .m_hide div
+        {
+            display: inline-block;
+        }
+
+         #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+        
+        #faqcontainer{
+            width: 80%;
+            margin: auto;
+            margin-top: 80px;
+        }
+       #faqcontainer h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+        hr{
+            background-color:  #e5b95f;
+            border:1px solid #e5b95f ;
+        }
+       #faqcontainer p{
+            font-family: system-ui;
+            text-align: justify;
+        }
+       #faqcontainer span{
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* --------------------Media Queries */
+        @media screen and (min-width:0px) and (max-width:720px){
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+        #bottomcontainer{
+            grid-template-columns:repeat(2,1fr);
+            grid-template-rows: 175px 250px 50px;
+            grid-template-areas:
+                        "i c "
+                        "i n "
+                        "b b ";
+            box-shadow: 0 3px 14px #7d7d7d;
+        }
+    }
+        @media screen and (min-width:0px) and (max-width:320px)
+            {
+                #bottomcontainer{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-rows: 300px 150px 250px 50px;
+            grid-template-areas:
+                        "i"
+                        "c"
+                        "n"
+                        "b";
+        }
+    }
+    </style> 
+</head>
+<body>
+   
+    <div id="header">        
+        <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+
+         <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+       <div class="m_show"> <i class="fas fa-search"></i></div>
+
+       
+        <div id="logo">                
+            <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+        </div>
+        <div id="nav_icons">
+            <div class="dropdown">
+                <a href="#">All Products</a>
+                <div class="dropdown-content">
+                    <a href='menspage.html'>Mens Products</a>
+                    <a href='womenPage.html'>Womens Products</a>
+                </div>
+            </div>
+            <a class="m_hide">            
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+        
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasTopLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                    <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </a>
+            <a href="wishlist.html"><i class="far fa-heart"></i></a>
+            <div class="dropdown">
+                <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                <div class="dropdown-content">
+    
+                    <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                    <a href='checkout.html'>Checkout</a>
+                    <a href='login.html'>Sign In</a>
+                    <a href='signup.html'>Create An Account</a>
+                </div>
+            </div>
+    
+            <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <div id="faqcontainer">
+        <div><h1>FAQ</h1></div>
+        <hr>
+        <div><span>1. I just ordered a FAB BAG subscription! What next? When will I receive my Bag?</span>
+            <p>Congratulations! You have taken the first step to discover, learn and experience beauty products from the best brands in the world. All FAB BAG ship by the end of the 3rd week of the month. It takes a while for our beauty experts to go through all your preferences and customize your FAB BAG for you, so yes - there is a little wait in this. However, we assure you that the wait will be well worth it! Meanwhile, you can customize your preferences by answering a fun questionnaire. </p>
+        </div>
+        <div><span>2. What is your shipping policy? Do I have to pay for shipping?</span>
+            <p>We know you hate hidden charges, so here's the headline - No shipping charges on all pre-paid orders. We add nominal shipping fee of INR 100 on all Cash on Delivery (COD) orders. We start shipping the subscription bags by the fourth week of every month wherein the ongoing subscriptions are shipped earlier. Your bag is shipped within 10-12 working days of placing the order. </p>
+        </div>
+        <div><span>3. How do I know the samples will work for me? How big are the samples?</span>
+            <p>Our FAB BAG experts work hard to individually customize each bag to suit the specific beauty needs of each subscriber. Please fill in your beauty profile (link) accurately to receive samples that will work for you. We are confident that you will love our carefully selected samples, but in case you receive something that you don't like, please share your feedback (link) and we promise that you will hear from us! The samples are typically designed for regular trial over a 7-10 days period. The exact quantity will depend on each product, although typically the quantity varies from 2ml to sometimes even a full-size product.</p>
+        </div>
+        <div><span>4. What if I need to cancel my subscription?</span>
+            <p>We value the trust you place in us when you sign up for a multi-month subscription and are committed to doing everything in our powers to delight you with your monthly delivery of curated beauty products. However, in the event that you choose to cancel your FAB BAG subscription mid-way, we promise to make the process absolutely simple. To cancel an ongoing subscription, please email us at crew@fabbag.com with the reason for the same before 25th of the month. We will cancel your subscription and refund you the difference between what you paid for your subscription and the billable amount for the months where you received your bag. The billable amount will be calculated by multiplying the number of months applicable with the prevailing rate of the 1-month subscription at the time when you purchased your subscription.</p>
+        </div>
+        <div><span> 5. How can I access the Makeup Choice Page?</span>
+            <p>Depending on our monthly curation, you should be able to pick a product in your Fab Bag.
+                If you are our on-going subscriber, the choice will be made available in the 4th week of the month for your upcoming Fab Bag.
+                In case of new subscriptions, the choice will be available on the Order Confirmation Page.
+                If you missed selecting your product on the Order Confirmation Page or cannot find the link, you can head to My Account > Orders History to make your selection.
+                T&C: Selection once made cannot be changed. If you miss out on selecting Makeup for the month within 48 hours or the deadline otherwise specified, the product will be customized by the FAB BAG Crew based on the preference you’ve listed in your Beauty Profile.</p>
+        </div>
+        <div><span>6. When do you ship the bag?</span>
+            <p>On-going Subscriptions are shipped in the first week of the month.
+                If this is the first bag of your new subscription, your order will be shipped within 10-12 working days of your initial order date.</p>
+        </div>
+        <div><span>7. How can I track my order?</span> 
+            <p>You can track your order in 'My Account' > under 'Order History’. Tracking details will be available once the order is dispatched. 
+
+                You will also receive an email with the tracking details once your order is shipped.</p>
+        </div>
+        <div> <span>8. What is my beauty profile?</span>
+            <p>Beauty profile helps us to understand the type of products you’d like to receive. While we try our best to send out products that match your preferences, it isn’t possible to completely opt-out of receiving certain products. Fab Bag is all about beauty discovery and we work hard to procure products you would love to try.
+                In case you miss out on selecting your Makeup for the month, the Fab Bag Crew will customize the product/shade of a product based on your beauty profile.</p>
+        </div>
+        <p>P.S. - We urge you to fill your beauty profile to help us customize and procure the best products for you!
+            If you wish to update your beauty profile, you can follow the steps below:
+            Login to your account, select “My Account” > “Beauty Profile” > Change your Selection > Click on Submit at the end of the questionnaire.</p>
+    </div>
+    <div id="bottomcontainer">
+        <div class="i">
+            <h3>Information</h3>
+            <div onclick="window.location.href='About.html'">About Us</div>
+            <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+            <div onclick="window.location.href='FAQ.html'">FAQ</div>
+            <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+            <div onclick="window.location.href='contact.html'">Contact Us</div>
+            <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+            <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+            <div onclick="window.location.href='policy.html'">Privacy Policy</div>
+        </div>
+        <div class="c">
+            <h3>Customer Care</h3>
+            <div>Call:022-6805-6010 
+                <div>
+                    (Monday to Firday :9am-7pm)
+                </div>
+                
+            </div>
+            <div>Mail:crew@fabbag.com</div>
+        </div>
+        <div class="n">
+            <h3>Newsletter</h3>
+            <form action="">
+                <div>Signup for the latest offer,update and news</div>
+                <input id="Emailtag" type="email" placeholder=" your email address">
+                <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                <div>Don't worry we don't spam</div>
+            </form>
+        </div>
+        <div class="b">
+            <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+        </div>
+    </div>
+
+</body>
+</html>

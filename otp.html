@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP validiation</title>
+    <style>
+         
+        body{
+            background-color: #6b6b6b;
+        }
+        #container{
+            width: 60%;
+            margin: auto;
+           margin-top: 70px;
+            height: 400px;
+            background-color: #6b6b6b;
+        }
+        #box{
+            width: 50%;
+            height: 100px;
+            margin: auto;
+            border: 1px solid blue;
+            margin-top: 150px;
+            padding:40px 30px  30px;
+            text-align: center;
+            background-color: #444444;
+
+        }
+        #flex{
+            display: flex;
+            justify-content: space-between;
+           
+        }
+        #name,#cardnumber{
+            width:98%;
+            height: 30px;
+            
+        }
+        #cvv,#date{
+            width:45%;
+            height: 30px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+
+        }
+
+        
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <input type="text" placeholder="Enter OTP" id="name">
+           
+            <br><br>
+            <button >Submit</button>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click",subfun)
+
+    function subfun(){
+        var text=document.querySelector("#name").value
+        
+        if(text=="12345"){
+            window.location.href="thanks.html"
+        }
+        else{
+            alert("Invalid otp");
+        }
+    }
+
+    
+</script>

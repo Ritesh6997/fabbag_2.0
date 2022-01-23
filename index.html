@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fab Bag</title>
+    <script src="https://kit.fontawesome.com/11ec43b564.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+         body {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }        
+        #header {
+            margin-bottom: 2%;
+            padding: 0% 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;     
+            height: 70px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: fixed;
+            left: 0;
+            right:0;
+            top:0; 
+            z-index: 999;   
+        }      
+        #subs {
+            display: inline-block;
+        }        
+        #subs a {
+            font-size: 1.6em;
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+        }      
+        #header a:hover {
+            color: #e4b961;
+        }        
+        #logo {
+            text-align: center;
+        }        
+        #bimg {
+            height: 45px;
+            width: auto;
+        }        
+        #nav_icons {
+            text-align: right;
+        }
+        #nav_icons a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }        
+        #nav_icons i {
+            margin: 0px 15px;
+            font-size: 1.2em;
+            color: black;
+        }        
+        #nav_icons i:hover {
+            color: #e4b961;
+        }        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }        
+        .dropdown-content a {  
+            display: block;      
+            padding: 3%;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+        .m_show
+        {
+            display: none;
+        }
+        .offcanvas-body a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .m_hide div
+        {
+            display: inline-block;
+        }
+/* -----------------Header End---------- */
+
+        .slidbar{
+            margin-top: 70px;
+            height: 450px;
+        }
+        .slidbar div
+        {
+            height: 100%;
+        }
+        .slidbar img
+        {
+            height: 100%;
+        }
+        .prod_bag
+        {            
+            text-transform: uppercase;
+            text-align: center;
+    
+            margin: 4%;
+        }
+        .prod_bag  div
+        {
+            display: inline-block;
+            /* padding: 2%; */
+            padding: 1.5%;
+            border-bottom: 2px solid #e4b961;
+        }
+        .show_prod
+        {
+            display: flex;
+        }
+        .prod_item
+        {
+            display: inline-block;
+            width: 21.5%;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 1% 1% 1% 2% ;
+            /* border: 1px solid ; */
+        }
+        .prod_image:hover{
+            opacity: 0.8;
+            background-color: grey;
+        }
+        .prod_image img
+        {
+            padding: 2%;
+            border: 3px solid #e4b961;
+            border-radius: 20%;
+            width: 100%;
+        }
+        .subscription
+        {
+                  width: 80%;
+            margin: 2% auto;
+        }
+        #enhi{
+            display: flex;
+            justify-content: space-between;
+        }
+        .sub_plan
+        {
+            display: grid;
+            text-align: center;
+     
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: repeat(1,450px);
+            grid-template-areas: "a a a a b b b b c c c c";
+     
+            grid-gap: 5%;
+        }
+        .sub_plan b
+        {
+            font-size: 1.3em;
+            color: black;
+        }
+        .des_plan
+        {
+            font-size: 0.95em;
+            padding-top: 1%;
+            text-transform: uppercase;
+            /* height: 70px; */
+            border: 1px solid lightgray;
+        }
+        .btn_plan 
+        {
+            padding: 4%;
+            /* height: 70px; */
+            background-color: #e4b961;
+        }
+        .plan button
+        {
+            width: 90%;
+            border: 1px solid #fefdf9;
+            font-weight: bold;
+            background-color: #e4b961;
+            /* height: 40px; */
+            color: white;
+            text-transform: uppercase;
+        }
+        .plan button:hover
+        {
+            color: black;
+        }
+        .plan strike 
+        {
+            color: black;
+            padding-left: 3%;
+            font-weight: 600;
+        }
+        .off_plan
+        {
+            border: 1px solid lightgray;
+            height: 230px;
+            color: #e4b961;
+            font-weight: 350;
+        }
+        .sub_plan :nth-child(1){grid-area: a;}
+        .sub_plan :nth-child(2){grid-area: b;}
+        .sub_plan :nth-child(3){grid-area: c;}
+
+        .signup_bonus
+        {
+            color: black;
+            border-top: 1px solid lightgray;
+            margin-top: 4%;
+            /* padding:5%; */
+            font-size: 0.9em;
+        }
+        .prev_bags
+        {
+            opacity: 0.6;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            /* height: 280px; */
+            /* border: 1px solid; */
+        }
+        .signup_bonus img
+        {
+            width: 60%;
+        }
+        .bags 
+        {
+            width: 23%;
+            margin: 2%;
+        }
+        .bags img
+        {
+            width: 100%;
+        }
+        .bags h6
+        {
+            font-size: 0.9em;
+            margin: 8% 0 3%;
+        }
+        .bags span
+        {
+            color: grey;
+            font-size: 0.9em;
+            font-weight: 700;
+            font-style: italic;
+        }
+        .bags span :nth-child(1)
+        {
+            padding-right: 5%;
+        }
+        .testimo
+        {
+            background: url(https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Testimonial-Final_2048x.png?v=1548829465);
+            background-position: center center;
+            background-attachment: fixed;
+            padding: 7%;
+            margin: 3% auto;
+        }
+        .slide_quote
+        {
+            text-align: center;
+            width: 80%;
+            margin: auto auto;
+        }
+        #testo1
+        {
+            padding: 0 10%;
+            /* font-size: 1.1rem; */
+        }
+        .carousel-inner i
+        {
+            font-weight: bolder;
+            font-size: 2em;
+            padding-bottom: 5%;
+        }
+        .carousel-inner p
+        {
+            font-size: 1.5em;
+        }
+        .trend
+        {
+            height: 200px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .trend_box
+        {
+            margin: 1.5% auto;
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+            grid-template-rows: repeat(1,150px);
+        }
+        .trend_pic img
+        {
+            width: 100%;
+            height: 100%;
+        }
+        .trend_pic img:hover
+        {
+            opacity: 0.5;
+            background: black;
+            background: url(https://instafeed.nfcube.com/assets/img/instagram-icon.svg);
+        }
+        .brand
+        {
+            height: 200px;
+            margin: 2% auto;
+            background: #e5b95f;
+        }
+        .brand div
+        {
+            height: 100%;
+
+        }
+        .brand_items
+        {
+            width:80%;
+            margin: auto auto;
+            display: flex;
+        }
+        .brand_img
+        {
+            width: 20%;
+            padding: 5%;
+        }
+        .brand_img img
+        {
+            width: 100%;
+            padding: 2%;
+            border: 2px solid;
+            background: white;
+        }
+        #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        .b a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+/* ------------------Media Queries----------------- */
+@media screen and (min-width:0px) and (max-width:720px) {
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+           .slidbar{
+               height:300px;
+           }
+           .show_prod{
+               display: grid;
+               grid-gap: 10px;
+               grid-template-columns: repeat(2,1fr);
+           }
+           
+           
+           .prod_item{
+               width: 90%;
+           }
+           .sub_plan{
+            grid-template-rows: repeat(2,450px);
+            grid-template-areas: "a a a a a a b b b b b b" 
+                                   "c c c c c c c c c c c c  ";
+           }
+           .prev_bags{
+               display: grid;
+               grid-gap: 10px;
+               grid-template-columns: repeat(2,1fr);
+           }
+           .bags{
+               width: 100%;
+           }
+           #bottomcontainer{
+            grid-template-columns:repeat(2,1fr);
+            grid-template-rows: 175px 250px 50px;
+            grid-template-areas:
+                        "i c "
+                        "i n "
+                        "b b ";
+            box-shadow: 0 3px 14px #7d7d7d;
+        }
+        }
+        @media screen and (min-width:0px) and (max-width:320px)
+            {
+                #bottomcontainer{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-rows: 300px 150px 250px 50px;
+            grid-template-areas:
+                        "i"
+                        "c"
+                        "n"
+                        "b";
+        } 
+        .slidbar{
+               height:200px;
+           }
+        .sub_plan{
+            grid-template-rows: 450px 450px 550px;
+            grid-gap: 0px;
+            grid-template-areas: "a a a a a a a a a a a a" 
+                                "b b b b b b b b b b b b" 
+                                   "c c c c c c c c c c c c  ";
+           }
+           .signup_bonus>p{
+               font-size: 12px;
+           }
+           .show_prod{
+               display: grid;
+               grid-gap: 10px;
+               grid-template-columns: repeat(1,1fr);
+           }
+           .prod_item{
+               width: 90%;
+           }
+            }
+        
+
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- ---------------------Navbar Starts Here--------------------- -->
+        <div id="header">        
+            <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+    
+            <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+           <div class="m_show"> <i class="fas fa-search"></i></div>
+    
+           
+            <div id="logo">                
+                <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+            </div>
+            <div id="nav_icons">
+                <div class="dropdown">
+                    <a href="#">All Products</a>
+                    <div class="dropdown-content">
+                        <a href='menspage.html'>Mens Products</a>
+                        <a href='womenPage.html'>Womens Products</a>
+                    </div>
+                </div>
+                <a class="m_hide">            
+                    <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+            
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                      <div class="offcanvas-header">
+                        <h5 id="offcanvasTopLabel"></h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                        <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                        <i class="fas fa-search"></i>
+                      </div>
+                    </div>
+                </a>
+                <a href="wishlist.html"><i class="far fa-heart"></i></a>
+                <div class="dropdown">
+                    <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                    <div class="dropdown-content">
+        
+                        <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                        <a href='checkout.html'>Checkout</a>
+                        <a href='login.html'>Sign In</a>
+                        <a href='signup.html'>Create An Account</a>
+                    </div>
+                </div>
+        
+                <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+        <!-- -----------------------Navbar Ends Here--------------------- -->
+
+        <!-- -----------------------Slider Starts Here--------------------- -->
+        <div class="slidbar">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Homepage-Banner-Makeup-Reveal_1_2048x.png?v=1641707852" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Homepage-Banner-Skincare-Reveal--2_2048x.png?v=1641541904" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Homepage-Banner-Skincaqre-Reveal_2048x.png?v=1641356448" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Homepage-Banner-Makeup-Reveal_5245d98e-6e1d-43af-a069-7e2aa61175ba_2048x.png?v=1641200608" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- -----------------------Slider Ends Here--------------------- -->
+
+
+        <!-- -----------------------Product Starts Here--------------------- -->
+        <div class="prod">
+            <div class="prod_bag">
+                <h1><div> WHAT'S IN THE BAG </div></h1>
+            </div>
+          <div class="show_prod">
+            <div onclick="window.location.href='product.html'" class="prod_item">
+                <div class="prod_image">
+                    <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag--Makeup-Reval-1_f2363b26-d6b5-4e83-83fb-29a83f84f5e0_2048x.png?v=1641199973" alt="">
+                </div>
+                <div>
+                    <span>SUGAR Wonder Woman 24 HR Lip Lacquer of your choice!*</span>
+                </div>
+            </div>
+         
+            <div onclick="window.location.href='product.html'" class="prod_item">
+                <div class="prod_image">
+                    <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag--Skincare-Reveal-1_aa1f2cbb-6ce8-4889-b3a6-a266f8fdcfd3_2048x.png?v=1641356659" alt="">
+                </div>
+                <div>
+                    <span>Coco Soul Hair and Scalp Cleanser/Shampoo</span>
+                </div>
+            </div>
+          
+            <div onclick="window.location.href='product.html'" class="prod_item">
+                <div class="prod_image">
+                    <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag--Skincare-Reveal-2_2422e34b-29b9-4768-83a8-e8e6099efc9e_2048x.png?v=1641542044" alt="">
+                </div>
+                <div>
+                    <span>Palmer's Hair Style Hold</span>
+                </div>
+            </div>
+          
+            <div onclick="window.location.href='product.html'" class="prod_item">
+                <div class="prod_image">
+                    <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag--Skincare-Reveal-3_6c48dfa1-26f9-4219-9c8a-471b6d1522bf_2048x.png?v=1641707903" alt="">
+                </div>
+                <div>
+                    <span>Baiser India Nourishing Lip Oil</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- -----------------------Product Ends Here--------------------- -->
+
+        <!-- -----------------------Subscription Starts Here--------------------- -->
+        <div class="subscription">
+            <div class="prod_bag">
+                <h1><div> subscription </div></h1>
+            </div>
+            <div class="sub_plan">
+               <div class="plan">
+      
+                   <div class="des_plan"><b>1 MONTH</b><br><span>subscription</span></div>
+                   <div class="des_plan"><b>Rs. 599.00</b><br>/ per month</div>
+                   <div class="off_plan"><span>ONE TIME PAYMENT</span><br><b>Rs. 599.00</b></div>
+                   <div class="btn_plan"><button onclick="addtocart(0)">add to cart</button></div>
+               </div>
+               <div class="plan">
+             
+                   <div class="des_plan"><b>3 MONTH</b><br><span>subscription</span></div>
+                   <div class="des_plan"><b>Rs. 533.00</b><br>/ per month</div>
+                   <div class="off_plan"><span>ONE TIME PAYMENT (11% OFF)</span><br><b>Rs. 1599.00</b><strike> Rs. 1,797</strike></div>
+                   <div class="btn_plan"><button onclick="addtocart(1)">add to cart</button></div>
+               </div>
+               <div class="plan">
+               
+                   <div class="des_plan"><b>6 MONTH</b><br><span>subscription</span></div>
+                   <div class="des_plan"><b>Rs. 483.00</b><br>/ per month</div>
+                   <div class="off_plan">
+                       <div>ONE TIME PAYMENT (19% OFF) <br><b>  Rs. 2,899.00 </b> <strike> Rs. 3,594</strike> </div>
+                       <div class="signup_bonus"> <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/GWP_Creative_1_260f48bb-6f40-4ff5-b724-2282930be6da_480x480.png?v=1619068709" alt=""> Free <p>SUGAR Contour De Force Mini Highlighter - 02 Gold Glory worth 399/-!*</p> </div>
+                   </div>
+                
+                   <div class="btn_plan"><button onclick="addtocart(2)">add to cart</button></div>
+               </div>
+            </div>
+        </div>
+        <!-- -----------------------Subscription Ends Here--------------------- -->
+
+
+        <!-- -----------------------Previous Bag Product Starts Here--------------------- -->
+        <div class="p_prod">
+            <div class="prod_bag">
+                <h1><div> previous bags </div></h1>
+            </div>
+           <div  class="prev_bags">
+            <div class="bags">
+                <div><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3_large.gif?v=1638191014" alt=""></div>
+                <div><h6>Dec'21 The X-Must Haves Fab Bag</h6> <span>from_price Rs. 599.00</span></div> 
+            </div>
+
+            <div class="bags">
+                <div><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1_large.gif?v=1636696484" alt=""></div>
+                <div><h6>Nov'21 The Diva-li-cious Fab Bag</h6> <span><strike>Rs. 1,797.00</strike></span> <span>from_price Rs. 599.00</span> </div>
+            </div>
+
+            <div class="bags">
+                <div><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_large.png?v=1633952538" alt=""></div>
+                <div><h6>Oct'21 The Re-Treat Fab Bag</h6> <span><strike>Rs. 1,797.00</strike></span> <span>from_price Rs. 599.00</span> </div>
+            </div>
+
+            <div class="bags">
+                <div><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed_large.png?v=1631337975" alt=""></div>
+               <div><h6>Sep'21 The She-9-igans Fab Bag</h6> <span><strike>Rs. 1,797.00</strike></span> <span>from_price Rs. 599.00</span></div> 
+            </div>
+           </div>
+            
+        </div>        
+
+        <!-- -----------------------Previous Bag Product Ends Here--------------------- -->
+
+        <!-- -----------------------Testimonial Starts Here--------------------- -->
+        <div class="testimo">
+            <div class="prod_bag">
+                <h1><div> Testimonials </div></h1>
+            </div>
+            <div class="slide_quote">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="testo1">
+                      <div class="carousel-item active">
+                        <span  class="d-block w-100"><i class="fas fa-quote-left"></i>
+                            <p>I love each and every Fab Bag that I receive each month past three years. I am so much in love with fab bags and all the lovely products and cute little pouches that I get. I love Fab Bag.</p>- Munira</span>
+                      </div>
+                      <div class="carousel-item">
+                        <span  class="d-block w-100"><i class="fas fa-quote-left"></i>
+                            <p>I've been a regular Fab Bag subscriber for many years now and I must say that the Fab Bag team comes up with something or the other as a special attraction in the bag every month.  As always, thank you Fab Bag for making my day with this bag!!!</p>- Saileena</span>
+                      </div>
+                      <div class="carousel-item">
+                        <span  class="d-block w-100"><i class="fas fa-quote-left"></i>
+                            <p>I like the fact that they offer high-quality products. Every single product from the bag stands out. It is a MUST TRY for every girl out there.</p>- Shikha</span>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>                
+        </div>
+        <!-- -----------------------Testimonial Ends Here--------------------- -->
+
+
+        <!-- -----------------------Trending Things Starts Here--------------------- -->
+        <div class="trend">
+            <h3>#TRENDINGNOW AT THE GOSSIP CORNER</h3>
+            <div class="trend_box">
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.29350-15/272067251_965150874142103_5163232391737633822_n.webp.jpg?_nc_cat=109&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=KZgaoITrS64AX9F3UHS&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_rp_b9B9vzTH-JknNTOkMQzP0K68PMlhxpejrFS3sqvQ&oe=61EDA558" alt=""></a>
+                     
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.29350-15/271956384_905411160169745_8282718073852644752_n.webp.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=uJwkWRMDS7gAX-7AC36&_nc_oc=AQma5nYJcICM2Zkk7b2GbJCtV4IQaQY0Ju3VWegpAuxYzV5yAk4lxAf1HtKbfo2iu04&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-gusiE0Jlm9n-F3dUM6_oHGBPC0tzyRAuaLd8MwLToxA&oe=61ED46C3" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.2885-15/272006066_4666103980111618_873631764728098827_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=D-z4p7P3UwQAX94nbGS&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT80OL3jw_nlgtdu6yX7i-OZidtTlSyTRpxqlNbP2YwtRg&oe=61ECF825" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.2885-15/271992638_1001208520818526_896469008677338792_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=Q3vKSw1kuv8AX91Ru8R&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT8F2N0DQ_tqT2BHVZhpu9Em0NKvMi8KoaupnDUcuskwnQ&oe=61EDCE65" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.2885-15/271846099_1077330483105899_7044974443288774001_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=YtZA-4T-T7kAX-xj8TK&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9XNTDPP65hsCj2AqB54-HqEllx6eTJTLhm1qfrINcX9g&oe=61EE3FEF" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.2885-15/271831309_1107191459820290_8476225185617580090_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=VcqmqCyc6lUAX9UfMoR&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT8WTeRU2vxwQxdlveWxFzXvAWNkXsKIoR9gYglXU9tHyA&oe=61EDF51C" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.2885-15/271825820_946442045995828_5090557766286137586_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=6J6--TaHhUMAX_tXMC3&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9E15-h9uufmi9Gar8nDfw0op9lPY5sURb032kR-Ja1XQ&oe=61ED61AE" alt=""></a>
+                </div>
+                <div class="trend_pic"><a href="#"><img src="https://scontent.cdninstagram.com/v/t51.29350-15/271666092_492021812265534_3753881042686970602_n.webp.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=jtD_bZeDkOAAX9XCnRJ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT83fY1Ft4g2xvQye4-xgkp8N5EuJdUae8Mxe_s6u6WQOQ&oe=61EDEF44" alt=""></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- -----------------------Trending Things Ends Here--------------------- -->
+
+
+        <!-- -----------------------Brands Slides Starts Here--------------------- -->
+        <div class="brand">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="brand_items">
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/sugar_1_160x160.jpg?v=1548837170" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Plum_Logo_For_Olive_and_Macadamia_Hair_Spa_Kit_160x160.png?v=1625063052" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Tru_hair_logo_160x160.png?v=1625063080" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/WOC_Beauty_Logo_160x160.jpg?v=1602225835" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Baiser_India_Logo_160x160.jpg?v=1625063066" alt=""></div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="brand_items">
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/6256280-43d286588b4beafb0e4a423acf72a620-medium_jpg_5e3480ef-0e7a-4aea-88d0-c48379ad9837_160x160.jpg?v=1599290601" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/brick-new-york-with-symbol-white_46f7f93d-9ac3-4a6b-8827-7341564c001c_160x160.png?v=1599126230" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/palmers-logo_33a73358-5f3d-4cd4-ac8c-ecf89a2c72b2_160x160.jpg?v=1597725541" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/LLW1vAyf_400x400_36a490d2-defb-4c90-898d-2af5215e8433_160x160.jpg?v=1578730298" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/719h_SoVZLL._SX466_160x160.jpg?v=1594029424" alt=""></div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="brand_items">
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/vedaearth-logo-final.jpg?v=1558006227" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/veet-logo-WB_480x480.jpg?v=1558006241" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/APS_LOGO_NEW_compact.png?v=1548834005" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Untitled-2.jpg?v=1558006169" alt=""></div>
+                        <div class="brand_img"><img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Soap_Square.png?v=1558002757" alt=""></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- -----------------------Brands Slides Enndss Here--------------------- -->
+        
+        <!-- -----------------------Footer Starts Here--------------------- -->
+        <div id="bottomcontainer">
+            <div class="i">
+                <h3>Information</h3>
+                <div onclick="window.location.href='About.html'">About Us</div>
+                <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+                <div onclick="window.location.href='FAQ.html'">FAQ</div>
+                <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+                <div onclick="window.location.href='contact.html'">Contact Us</div>
+                <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+                <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+                <div onclick="window.location.href='policy.html'">Privacy Policy</div>
+            </div>
+            <div class="c">
+                <h3>Customer Care</h3>
+                <div>Call:022-6805-6010 
+                    <div>
+                        (Monday to Firday :9am-7pm)
+                    </div>
+                    
+                </div>
+                <div>Mail:crew@fabbag.com</div>
+            </div>
+            <div class="n">
+                <h3>Newsletter</h3>
+                <form action="">
+                    <div>Signup for the latest offer,update and news</div>
+                    <input id="Emailtag" type="email" placeholder=" your email address">
+                    <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                    <div>Don't worry we don't spam</div>
+                </form>
+            </div>
+            <div class="b">
+                <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+            </div>
+        </div>
+        <!-- -----------------------Footer Endss Here--------------------- -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
+<script>
+    var ProductData=JSON.parse(localStorage.getItem("ProductData"))
+    console.log(ProductData);
+    cartarr=JSON.parse(localStorage.getItem("CartData"))||[]
+    function addtocart(index)
+    {
+        cartarr.push(ProductData[index])
+        localStorage.setItem("cartData",JSON.stringify(cartarr))
+    }
+    console.log(cartarr)
+</script>
+
+<!-- var prev_bag = [
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3_large.gif?v=1638191014,
+    name : Dec'21 The X-Must Haves Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1_large.gif?v=1636696484,
+    name :Nov'21 The Diva-li-cious Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_large.png?v=1633952538,
+    name : Oct'21 The Re-Treat Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed_large.png?v=1631337975,
+    name : Sep'21 The She-9-igans Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product_large.gif?v=1629009087,
+    name : Aug'21 The Lash & Line Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+{
+    image : https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4_large.png?v=1625976508,
+    name : Jul'21 The Beauty On Duty Fab Bag,
+    price : 599.00,
+    str_price : 1,797.00,
+},
+] -->

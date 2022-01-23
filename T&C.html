@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <script src="https://kit.fontawesome.com/949c241a8a.js" crossorigin="anonymous"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">   
+    <style>
+       body {
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }        
+        #header {
+            margin-bottom: 2%;
+            padding: 0% 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;     
+            height: 70px;
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: fixed;
+            left: 0;
+            right:0;
+            top:0; 
+            z-index: 999;   
+        }      
+        #subs {
+            display: inline-block;
+        }        
+        #subs a {
+            font-size: 1.6em;
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+        }      
+        #header a:hover {
+            color: #e4b961;
+        }        
+        #logo {
+            text-align: center;
+        }        
+        #bimg {
+            height: 45px;
+            width: auto;
+        }        
+        #nav_icons {
+            text-align: right;
+        }
+        #nav_icons a {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }        
+        #nav_icons i {
+            margin: 0px 15px;
+            font-size: 1.2em;
+            color: black;
+        }        
+        #nav_icons i:hover {
+            color: #e4b961;
+        }        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }        
+        .dropdown-content a {  
+            display: block;      
+            padding: 3%;
+            font-size: 0.8em;
+            margin-right: 5px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+        .m_show
+        {
+            display: none;
+        }
+        .offcanvas-body a
+        {
+            text-decoration: none;
+            color: black;
+        }
+        .m_hide div
+        {
+            display: inline-block;
+        }
+
+        #tcContainer{
+            width: 80%;
+            margin: auto;
+            margin-top: 80px;
+        }
+        #tcContainer h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+        hr{
+            background-color:  #e5b95f;
+            border:1px solid #e5b95f ;
+        }
+        #tcContainer p{
+            font-family: system-ui;
+            text-align: justify;
+        }
+        #tcContainer span{
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #tcContainer ul{
+            list-style-type: disc;
+        }
+
+        #bottomcontainer{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: 175px 175px 50px;
+            padding: 5% 14%;
+            grid-gap: 1%;
+            grid-template-areas:
+                        "i c n"
+                        "i c n"
+                        "b b b";
+            box-shadow: 0 3px 14px #7d7d7d;
+            color: #7d7d7d;
+            background: #fff;
+            margin-top: 20%;
+        }
+        .i{
+            grid-area: i;
+            
+        }
+        .i>div{
+            margin-bottom: 4%;
+            font-family: system-ui;
+        }
+        .c{
+            grid-area: c;
+        }
+        .n{
+            grid-area: n;
+        }
+        .b{
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            
+        }
+        #bottomcontainer h3{
+            color: black;
+            text-transform: uppercase;
+            font-family: "Gill Sans", sans-serif;
+            font-weight: 200;
+        }
+        #bottomcontainer>div>div:hover{
+            color:#e5b95f;
+        }
+   
+        .b a{
+            margin-left: 1%;
+            font-size: 2em;
+            color: black;
+        }
+        a:hover{
+            color: red;
+        }
+        #Emailtag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 30px;
+            border-radius: 5px;
+            border: 0;
+        }
+        #Submittag{
+            box-shadow: 10px 10px 15px rgb(0 0 0 / 5%);
+            height: 35px;
+            border: 0;
+            background-color:#e5b95f ; 
+            color: white;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .n>form>input{
+            margin: 8% 0%;
+            
+        }
+
+        /* --------------------Media Queries */
+    @media screen and (min-width:0px) and (max-width:720px){
+            #subs
+            {
+                display: none;
+            }
+            .m_show
+            {
+                display: inline-block;
+                font-size: 1em;
+                color: black;
+            }
+            .m_show :hover
+            {
+                color: #e4b961;
+            }
+            .m_show .btn
+            {
+                font-size: small;
+                padding: 5px;
+                background-color: white;
+                border: none;
+                color: black;
+            }
+            .m_hide
+            {
+                display: none;
+            }
+            #logo
+            {
+                max-width: 30%;
+            }
+            #bimg
+            {
+                width: 100%;
+                height: 80%;
+            }
+            #nav_icons a 
+            {
+                font-size: small;
+            }
+            #nav_icons
+            {
+                font-weight: 400;
+                font-size: smaller;
+            }
+            .header
+            {
+                text-align: center;
+                padding: 0.5%;
+            }
+        #bottomcontainer{
+            grid-template-columns:repeat(2,1fr);
+            grid-template-rows: 175px 250px 50px;
+            grid-template-areas:
+                        "i c "
+                        "i n "
+                        "b b ";
+            box-shadow: 0 3px 14px #7d7d7d;
+        }
+    }
+        @media screen and (min-width:0px) and (max-width:320px)
+            {
+                #bottomcontainer{
+            grid-template-columns:repeat(1,1fr);
+            grid-template-rows: 300px 150px 250px 50px;
+            grid-template-areas:
+                        "i"
+                        "c"
+                        "n"
+                        "b";
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="header">        
+        <div id="subs"> <a href='subscribe.html'>  Subscribe now </a> </div>
+
+         <div class="m_show">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fas fa-bars"></i></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                   <div class="offcanvas-header">
+                       <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+                       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p><a href='subscribe.html'>  Subscribe now </a></p> <hr/>
+                        <p><a href='checkout.html'>Checkout</a></p> <hr/>
+                        <p><a href='login.html'>Sign In</a></p>  <hr/>
+                        <p><a href='signup.html'>Create An Account</a></p>
+                    </div>
+                </div>
+            </div>
+       <div class="m_show"> <i class="fas fa-search"></i></div>
+
+       
+        <div id="logo">                
+            <a href="index.html"><img id="bimg" src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289" alt="Brand Logo"></a>
+        </div>
+        <div id="nav_icons">
+            <div class="dropdown">
+                <a href="#">All Products</a>
+                <div class="dropdown-content">
+                    <a href='menspage.html'>Mens Products</a>
+                    <a href='womenPage.html'>Womens Products</a>
+                </div>
+            </div>
+            <a class="m_hide">            
+                <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"> <i class="fas fa-search"></i></div>
+        
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <h5 id="offcanvasTopLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body" style="display:flex;align-items: center;width: 80%;margin: auto;">
+                    <input type="text" style="width: 80%;" placeholder="Search Your Product Here...">
+                    <i class="fas fa-search"></i>
+                  </div>
+                </div>
+            </a>
+            <a href="wishlist.html"><i class="far fa-heart"></i></a>
+            <div class="dropdown">
+                <a href="#" class="m_hide"><i class="fas fa-user"></i></a>
+                <div class="dropdown-content">
+    
+                    <span><a href="#"> En</a> <a href="#">Hi</a></span>
+                    <a href='checkout.html'>Checkout</a>
+                    <a href='login.html'>Sign In</a>
+                    <a href='signup.html'>Create An Account</a>
+                </div>
+            </div>
+    
+            <a href='AddToCart.html'><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!------------------------------------ header ends------------------------------------ -->
+    <div id="tcContainer">
+        <h1>TERMS AND CONDITIONS</h1>
+        <hr>
+        <h2>Monthly FAB BAG Beauty & Grooming Subscriptions</h2>
+        <ol>
+            <li>
+                For Products Damaged in Transit: Before each FAB BAG is shipped, we do several levels of rigorous quality checks to eliminate the chances of a damaged product being shipped. In the rare event that a product from your monthly FAB BAG is accidentally damaged in transit, we will happily replace it with another piece of the same. Please note that the issue has to be communicated to us within 48 hours of delivery of your FAB BAG via an email to crew@fabbag.com with a picture of the damaged product. We require this to source a replacement from our brand partners that we then ship out to you.
+            </li>
+            <li>
+                Address Change Requests Ongoing Subscriptions: We accept address changes for a month's FAB BAG before 25th of the previous month. For timely shipping and operational reasons, we will not be able to accept any address changes after this date as your bag would have already been processed. If you are unlikely to be available at the address on record, you can drop in a request for us to hold your shipment and ship it out with the next month's delivery. In case your order has left our warehouse reshipping service charge of INR 100 will be applicable for address change after the timeline specified.
+            </li>
+            <li>
+                New Subscriptions: Address changes for new subscription should be updated via email within 48 hours of the order placed. Please send us an email to crew@fabbag.com with the details of your new address for us to make the change.
+            </li>
+            <li>
+                Makeup/Shade/Product Selection: Depending on our monthly curation, you should be able to pick a product in your Fab Bag.
+If you are our On-Going Subscriber, the choice will be made available in the 4th week of the month for your upcoming Fab Bag. In case of New Subscriptions, the choice will be available on the Order Confirmation Page. If you missed selecting your product on the Order Confirmation Page or cannot find the link, you can head to My Account > Orders History to make your selection.
+Selection once made cannot be changed. If you miss out on selecting Makeup for the month within 48 hours or the deadline otherwise specified, the product will be customized by the FAB BAG Crew based on the preference you’ve listed in your Beauty Profile.
+            </li>
+            <li>Shipment Hold Request Ongoing Subscriptions:
+                <ul>
+                    <li>Ongoing subscriptions - We accept requests to hold a shipment and dispatch it after a specific date only if they are communicated to us before the 25th of the previous month.</li>
+                    <li>New Subscriptions - Order Hold Requests for new subscription should be updated via email within 48 hours of placing the order. Please send us an email to crew@fabbag.com with details of your request. For timely shipping and operational reasons, we are unable to accept shipment hold requests after the 25th of each month.</li>
+                    <li>Returned Bags: For prepaid orders that are returned to us due to the inability of the member to accept the parcel (member unavailable, out of the station, incomplete address, member shifted, etc.) we will reship the bag with the next month's bag. All Cash On Delivery (COD) orders that are returned to us are reshipped only after the payment for the same is made online.</li>
+                    <li>Product Missing: In case you do not receive any product in your bag please mail us at crew@fabbag.com within 48 hours of receiving the shipment. We will ship the missing product to you at our earliest.</li>
+                    <li>Undelivered Shipment: In case you do not receive your subscription bag please mail us at crew@fabbag.com before 10th of the next month so that we can check with our courier partner and investigate the same. We will resolve your query at the earliest.</li>
+                </ul>
+            </li>
+        </ol>
+        <h2>Terms of Use</h2>
+        <p>Fabbag.com reserves the right, in its sole discretion, to suspend or cancel the service at any time if a computer virus, bug, or other technical problem corrupts the security or proper administration of the service. Fabbag.com disclaims all warranties or conditions, whether expressed or implied, (including without limitation implied, warranties or conditions of information and context). We consider ourselves and intend to be subject to the jurisdiction only of the local courts. Fabbag.com reserves the right to refuse service to anyone at any time. Fabbag.com shall not be responsible for any damage caused by the use of its website.
+
+            Fabbag.com does not warrant and shall not be responsible for the damage arising out of the use of the products listed on its site. If a product delivered to you is different than as described on the website, Fabbag.com is liable only to change the product. Fabbag.com is not responsible for delays arising out of force majeure.</p>
+            <h2>Copyright and Intellectual Property</h2>
+            <p>All information displayed, transmitted or carried on Fabbag.com is protected by copyright and other intellectual property laws. This site is designed, updated and maintained independently by Fabbag.com. You should not modify, publish, transmit, transfer, sell, reproduce, create derivative work from, distribute, perform, display or in any way commercially exploit any of the content at Fabbag.com.</p>
+            <h2>Privacy Policy</h2>
+            <p>
+                At Fabbag.com, we respect your privacy as much as you do. We do not share your personal information with others. This information is only used by Fabbag.com and its partners to ensure the fulfilment of the service requested by you. This includes informing you of promotional offers, which you could choose to opt out of via the "Unsubscribe" link in every promotional email communication. For opting out of SMS communication, please email us on crew@fabbag.com with your mobile number. By signing up for a paid FAB BAG beauty subscription, you agree to receive updates about your order such as dispatch, expiry, renewal, etc. via email and SMS on the email address and mobile number that you provide to us while signing up for this service.
+            </p>
+    </div>
+
+    <div id="bottomcontainer">
+        <div class="i">
+            <h3>Information</h3>
+            <div onclick="window.location.href='About.html'">About Us</div>
+            <div onclick="window.location.href='Associated.html'">Associated Brand</div>
+            <div onclick="window.location.href='FAQ.html'">FAQ</div>
+            <div onclick="window.location.href='Collaborate.html'">Collaborate with Fab Bag</div>
+            <div onclick="window.location.href='contact.html'">Contact Us</div>
+            <div onclick="window.location.href='R&R.html'" >Return & Refunds</div>
+            <div onclick="window.location.href='T&C.html'">Terms & Conditions</div>
+            <div onclick="window.location.href='policy.html'">Privacy Policy</div>
+        </div>
+        <div class="c">
+            <h3>Customer Care</h3>
+            <div>Call:022-6805-6010 
+                <div>
+                    (Monday to Firday :9am-7pm)
+                </div>
+                
+            </div>
+            <div>Mail:crew@fabbag.com</div>
+        </div>
+        <div class="n">
+            <h3>Newsletter</h3>
+            <form action="">
+                <div>Signup for the latest offer,update and news</div>
+                <input id="Emailtag" type="email" placeholder=" your email address">
+                <input onclick="window.location.href='subscribe.html'" id="Submittag" type="submit" value="Subscribe">
+                <div>Don't worry we don't spam</div>
+            </form>
+        </div>
+        <div class="b">
+            <a href="https://www.facebook.com/fabbag"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/thefabbag"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/thefabbag/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/fabbag"><i class="fab fa-youtube"></i></a> 
+        </div>
+    </div>
+</body>
+</html>

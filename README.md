@@ -7,6 +7,13 @@ Cloned of fabbag web application that provides a beauty subscription for women o
 ## Javascript
 ## Bootstrap
 
+# Features:
+## Home Page
+## Sign IN/ Sign Up Page
+## Products Page
+## Cart Page
+## Payment Page
+## Associated Brands Page
 
 # Glimpse of our Website-
 ## Landing Page
